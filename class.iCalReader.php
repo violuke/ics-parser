@@ -345,11 +345,11 @@ class ICal
         // if 32 bit integers are used.
 
         if ($date[8] == 'Z'){
-                $conv_date = new DateTime(now, new DateTimeZone('UTC'));
+                $conv_date = new DateTime('now', new DateTimeZone('UTC'));
         } elseif (!$tzone) {
-                $conv_date = new DateTime(now);
+                $conv_date = new DateTime('now');
         } else {
-                $conv_date = new DateTime(now, new DateTimeZone($tzone));
+                $conv_date = new DateTime('now', new DateTimeZone($tzone));
         }   
         $conv_date->setDate((int)$date[2], (int)$date[3], (int)$date[4]);
         $conv_date->setTime((int)$date[5], (int)$date[6], (int)$date[7]);
